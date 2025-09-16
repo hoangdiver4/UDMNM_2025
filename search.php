@@ -1,11 +1,4 @@
 <?php
-/**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package Herobiz
- */
 ?>
 <article id="post-<?php the_ID(); ?>">
     <header class="entry-header">

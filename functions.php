@@ -63,7 +63,7 @@ function herobiz_sidebar_registration() {
         'after_title'   => '</h4>',
     ) );
 }
-add_action( 'widgets_init', 'herobiz_sidebar_widgets_init' );
+add_action( 'widgets_init', 'herobiz_sidebar_registration' );
 function herobiz_public_scripts() {
     wp_enqueue_style('default',get_template_directory_uri().'/assets/css/default.css',[],wp_rand(),'all');
     wp_enqueue_style('main',get_template_directory_uri().'/assets/css/main.css',[],wp_rand(),'all');
