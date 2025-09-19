@@ -1,0 +1,12 @@
+/* Ghi đè lại margin mặc định của WordPress */
+.is-layout-flex > :is(*, div) {
+    margin: initial !important;  /* trả về margin mặc định của trình duyệt */
+}
+
+/* Nếu muốn giá trị cụ thể (ví dụ 20px) thì ghi thế này */
+.is-layout-flex > div {
+    margin: 1px !important;
+}
+.wp-elements-7be5ae970325ead4f66be6bb0fc1d996 a:where(:not(.wp-element-button)){
+	text-decoration: none;
+}
