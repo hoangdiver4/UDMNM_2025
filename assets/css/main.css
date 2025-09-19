@@ -176,3 +176,296 @@
 .home-flatoff{
   background-color: #F6F6F6;
 }
+/* ==== FOOTER ==== */
+.site-footer {
+  background-color: #1f262c;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-col h3 {
+  color: #00a0a0; /* Màu tiêu đề */
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-col p, .footer-col li, .footer-col a {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-logo img {
+  max-height: 40px;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #00a0a0;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff4081;
+}
+
+.footer-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-container ul li {
+  margin-bottom: 8px;
+}
+
+.footer-container ul li a:hover {
+  color: #ff4081;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #555;
+  margin: 30px 0 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-logo {
+    justify-content: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}
+.contact-link{
+  text-decoration: none;
+}
+.Contact-us{
+  width: 580px;
+}
+.blog-image-chest{
+  width: 300px;
+}
+/* ==== POST ARTICLE STYLE ==== */
+article {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* Header */
+.entry-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.entry-header h1.entry-title,
+.entry-header h2.entry-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.entry-header a.entry-link {
+  color: #333;
+  text-decoration: none;
+}
+
+.entry-header a.entry-link:hover {
+  color: #0073aa;
+}
+
+/* Thumbnail */
+article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Nội dung */
+.entry-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.entry-content p {
+  margin-bottom: 1.2em;
+}
+
+/* Định dạng tiêu đề phụ trong bài */
+.entry-content h2,
+.entry-content h3 {
+  margin-top: 1.8em;
+  font-weight: 600;
+  color: #222;
+  position: relative;
+}
+
+.entry-content h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 50px;
+  height: 3px;
+  background: #0073aa;
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  article {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+  
+  .entry-header h1.entry-title,
+  .entry-header h2.entry-title {
+    font-size: 1.5rem;
+  }
+
+  .entry-content {
+    font-size: 0.95rem;
+  }
+}
+/* Vùng chứa toàn bộ comment */
+.comments-area {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+/* Tiêu đề Comments (Comments (x)) */
+.comments-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #009688;
+  padding-bottom: 10px;
+}
+
+/* Danh sách comment */
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment-list li {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Tên tác giả và thời gian */
+.comment-author {
+  font-weight: bold;
+  color: #333;
+}
+
+.comment-metadata {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Nội dung bình luận */
+.comment-content {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Link trả lời bình luận */
+.comment-reply-link {
+  font-size: 0.85rem;
+  color: #009688;
+  text-decoration: none;
+}
+.comment-reply-link:hover {
+  text-decoration: underline;
+}
+
+/* Form gửi bình luận */
+.comment-respond {
+  margin-top: 40px;
+}
+.comment-form-comment textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.submit {
+  background: #009688;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.submit:hover {
+  background: #00796b;
+}
+/* Bỏ gạch dưới cho tất cả link trong phần bình luận */
+.comments-area a,
+.comment-list a,
+.comment-meta a {
+  text-decoration: none;
+  color: #009688; /* Hoặc màu bạn muốn */
+}
+
+.comments-area a:hover,
+.comment-list a:hover {
+  text-decoration: underline; /* Hoặc none nếu muốn bỏ hoàn toàn */
+  color: #00796b; /* Đổi màu khi hover */
+}
+.blog-post-live{
+  margin: -200px;
+}
+.about-start{
+  width: 550px;
+}

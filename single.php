@@ -1,5 +1,3 @@
-
-
 <?php
 echo get_post_format();
 get_header();
@@ -9,23 +7,24 @@ get_header();
     <main id="main" class="site-main">
 
         <?php
-        while (have_posts()) :
+        while ( have_posts() ) :
             the_post();
-            the_content();
-            get_template_part('template-parts/post/content',get_post_format());
-        endwhile;
-        
 
-        if (comments_open() || get_comments_number()) :
+            // Gọi file template cho nội dung bài viết (chuẩn WordPress)
+            get_template_part( 'template-parts/post/content', get_post_format() );
+
+        endwhile;
+
+        // Hiển thị comment nếu bật
+        if ( comments_open() || get_comments_number() ) :
             comments_template();
         endif;
         ?>
 
     </main>
 
-        <?php get_sidebar(); ?>
+    <?php get_sidebar(); ?>
 
 </div>
 
-<?php
-get_footer();
+<?php get_footer(); ?>
