@@ -92,3 +92,6 @@ function herobiz_theme_supports() {
     ) );
 }
 add_action( 'after_setup_theme', 'herobiz_theme_supports' );
+register_nav_menus( array(
+    'primary' => __( 'Primary Menu', 'your-theme' ),
+) );

@@ -1,5 +1,8 @@
 /* ==== HEADER CHUNG ==== */
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #fff;
   border-bottom: 1px solid #eee;
   padding: 12px 0;
@@ -10,6 +13,7 @@
   justify-content: space-between;
   align-items: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  
 }
 
 .header-container {
@@ -159,7 +163,7 @@
   font-weight: bold;
   margin-left: 30px;
   margin-top: 30px;
-  width: 260px;
+  width: 360px;
   justify-content: end;
 
 }
@@ -469,3 +473,52 @@ article img {
 .about-start{
   width: 550px;
 }
+.leftheader{
+    display: flex;
+}
+/* ==== Language Switcher ==== */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin-right: 30px;
+}
+
+.language-switcher li {
+  list-style: none;
+}
+
+/* Bỏ border và thêm icon bằng ::before */
+.language-switcher li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  padding: 4px 8px;
+  border: none;               /* ❌ Bỏ viền */
+  border-radius: 4px;
+  background: transparent;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+/* Thêm biểu tượng cho từng ngôn ngữ */
+.language-switcher li.lang-item-en a::before {
+  content: "🇬🇧";              /* Biểu tượng tiếng Anh */
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+.language-switcher li.lang-item-vi a::before {
+  content: "🇻🇳";              /* Biểu tượng tiếng Việt */
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+/* Hover */
+.language-switcher li a:hover {
+  background: #f5f5f5;
+  color: #e91e63;
+}
+

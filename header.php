@@ -30,14 +30,33 @@
     </div>
 
     <!-- Menu điều hướng (nằm dưới header-container) -->
-    <nav class="main-navigation">
-        <?php
-        wp_nav_menu( array(
-            'theme_location' => 'primary', // Đã khai báo trong functions.php
-            'menu_id'        => 'primary-menu',
-            'container'      => false,
-            'fallback_cb'    => false,
-        ) );
-        ?>
-    </nav>
+     <div class="leftheader">
+        <?php if ( function_exists( 'pll_the_languages' ) ) : ?>
+            <span class="lang-icon" aria-hidden="true">🌐</span>
+            <div class="language-switcher">
+                <?php
+                // Lấy danh sách ngôn ngữ dưới dạng array
+                $langs = pll_the_languages( array(
+                    'dropdown'      => 1,
+                    'show_flags'    => 0,
+                    'show_names'    => 1,
+                    'echo'          => 0 
+                ) );
+                echo $langs; // Chỉ in ra một lần
+                ?>
+            </div>
+        <?php endif; ?>
+     
+        <nav class="main-navigation">
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'primary', // Đã khai báo trong functions.php
+                'menu_id'        => 'primary-menu',
+                'container'      => false,
+                'fallback_cb'    => false,
+            ) );
+            ?>
+        </nav>
+        
+    </div>
 </header>
