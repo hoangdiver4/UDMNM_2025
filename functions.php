@@ -95,3 +95,44 @@ add_action( 'after_setup_theme', 'herobiz_theme_supports' );
 register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'your-theme' ),
 ) );
+function create_user_post_type() {
+    $labels = array(
+        'name'               => 'Bài viết người dùng',
+        'singular_name'      => 'Bài viết người dùng',
+        'menu_name'          => 'Bài viết người dùng',
+        'name_admin_bar'     => 'Bài viết người dùng',
+        'add_new'            => 'Thêm mới',
+        'add_new_item'       => 'Thêm bài viết mới',
+        'new_item'           => 'Bài viết mới',
+        'edit_item'          => 'Chỉnh sửa bài viết',
+        'view_item'          => 'Xem bài viết',
+        'all_items'          => 'Tất cả bài viết',
+        'search_items'       => 'Tìm bài viết',
+        'not_found'          => 'Không tìm thấy',
+        'not_found_in_trash' => 'Không tìm thấy trong thùng rác'
+    );
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => true,
+        'rewrite'            => array('slug' => 'user-post'),
+        'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt'),
+        'capability_type'    => 'post',
+        'map_meta_cap'       => true,
+        'show_in_rest'       => true,
+    );
+    register_post_type('user_post', $args);
+}
+add_action('init', 'create_user_post_type');
+function add_user_post_caps() {
+    $role = get_role('author'); // hoặc 'contributor', 'subscriber'
+    if ($role) {
+        $role->add_cap('edit_user_posts');
+        $role->add_cap('edit_published_user_posts');
+        $role->add_cap('delete_user_posts');
+        $role->add_cap('publish_user_posts');
+        $role->add_cap('read');
+    }
+}
+add_action('admin_init', 'add_user_post_caps');
+require get_template_directory() . '/inc/user-post.php';

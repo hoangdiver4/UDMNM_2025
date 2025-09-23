@@ -57,6 +57,44 @@
             ) );
             ?>
         </nav>
+
+        <div class="icon-user">
+            <div class="icon-user user-dropdown-wrapper">
+                <?php if ( is_user_logged_in() ) : 
+                    $current_user = wp_get_current_user();
+                    $is_admin = in_array('administrator', $current_user->roles);
+                ?>
+                    <a href="javascript:void(0);" class="user-menu-link" id="userDropdownBtn" title="Tài khoản của bạn">
+                        <span class="user-icon" aria-hidden="true">
+                            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M4 20c0-4 8-4 8-4s8 0 8 4"/>
+                            </svg>
+                        </span>
+                    </a>
+                    <div class="user-dropdown" id="userDropdownMenu">
+                        <ul>
+                            <?php if ( $is_admin ) : ?>
+                                <li><a href="<?php echo esc_url( admin_url() ); ?>">Trang quản lý</a></li>
+                            <?php else: ?>
+                                <li><a href="<?php echo esc_url( site_url('/quan-ly-bai/') ); ?>">Quản lý bài</a></li>
+                                <li><a href="<?php echo esc_url( site_url('/viet-bai/') ); ?>">Viết bài</a></li>
+                            <?php endif; ?>
+                            <li><a href="<?php echo esc_url( wp_logout_url( home_url() ) ); ?>">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                    <a href="<?php echo esc_url( wp_login_url() ); ?>" class="user-menu-link" title="Đăng nhập/Đăng ký">
+                        <span class="user-icon" aria-hidden="true">
+                            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M4 20c0-4 8-4 8-4s8 0 8 4"/>
+                            </svg>
+                        </span>
+                    </a>
+                <?php endif; ?>
+            </div>
+        </div>
         
     </div>
 </header>

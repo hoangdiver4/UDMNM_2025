@@ -10,3 +10,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('userDropdownBtn');
+    var wrapper = document.querySelector('.user-dropdown-wrapper');
+    if(btn && wrapper) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            wrapper.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+            if (!wrapper.contains(e.target)) {
+                wrapper.classList.remove('open');
+            }
+        });
+    }
+});

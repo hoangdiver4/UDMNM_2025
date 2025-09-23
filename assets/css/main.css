@@ -478,11 +478,12 @@ article img {
 }
 /* ==== Language Switcher ==== */
 .language-switcher {
-  display: flex;
   align-items: center;
   gap: 8px;
   padding: 0;
   margin-right: 30px;
+  margin-left: 4px;
+  margin-top: 6px;
 }
 
 .language-switcher li {
@@ -522,3 +523,287 @@ article img {
   color: #e91e63;
 }
 
+/* ==== USER ICON STYLE ==== */
+.user-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-left: 28px;
+  padding: 0 6px;
+  border-radius: 50%;
+  transition: background 0.2s, box-shadow 0.2s;
+  position: relative;
+  top: 0;
+}
+
+.user-menu-link:hover,
+.user-menu-link:focus {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+  outline: none;
+}
+
+.user-icon svg {
+  display: block;
+  vertical-align: middle;
+  stroke: #333;
+  transition: stroke 0.2s;
+  width: 28px;
+  height: 28px;
+}
+
+.user-menu-link:hover .user-icon svg {
+  stroke: #007bff;
+}
+
+/* Đảm bảo icon không bị lệch so với menu */
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 6px;
+}
+
+/* Đảm bảo menu list và icon user nằm ngang */
+.main-navigation ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Đặt icon user sát phải menu */
+.user-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  padding: 0 6px;
+  border-radius: 50%;
+  transition: background 0.2s, box-shadow 0.2s;
+  position: relative;
+  top: 0;
+  background: none;
+  box-shadow: none;
+  margin-bottom: 5px;
+}
+
+.user-icon svg {
+  display: block;
+  vertical-align: middle;
+  stroke: #333;
+  transition: stroke 0.2s;
+  width: 28px;
+  height: 28px;
+}
+
+.user-menu-link:hover .user-icon svg {
+  stroke: #007bff;
+  background: none;
+  box-shadow: none;
+}
+.lang-icon{
+  margin-top: 7px;
+}
+/* User Dropdown */
+.user-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.user-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 120%;
+    background: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 8px 0;
+}
+.user-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.user-dropdown ul li a {
+    display: block;
+    padding: 10px 18px;
+    color: #222;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.user-dropdown ul li a:hover {
+    background: #f5f5f5;
+    color: #007bff;
+}
+.user-dropdown-wrapper.open .user-dropdown {
+    display: block;
+}
+/* --- User Post Form & Manager --- */
+.user-post-form {
+  max-width: 500px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 32px 28px 24px 28px;
+}
+
+.user-post-form h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+  color: #007bff;
+}
+
+.user-post-form input[type="text"],
+.user-post-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fafbfc;
+  transition: border 0.2s;
+}
+
+.user-post-form input[type="text"]:focus,
+.user-post-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.user-post-form input[type="file"] {
+  margin-bottom: 18px;
+}
+
+.user-post-form input[type="submit"] {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.user-post-form input[type="submit"]:hover {
+  background: #0056b3;
+}
+
+.user-post-list {
+  max-width: 600px;
+  margin: 32px auto 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 24px 28px;
+}
+
+.user-post-list ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.user-post-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.05rem;
+}
+
+.user-post-list li:last-child {
+  border-bottom: none;
+}
+
+.user-post-list a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.user-post-list a:hover {
+  color: #007bff;
+}
+.user-post-archive-card {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  margin-bottom: 48px;
+  padding: 32px 32px 32px 32px;
+  gap: 36px;
+  transition: box-shadow 0.2s;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.user-post-archive-thumb {
+  flex: 0 0 260px;
+  max-width: 260px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-post-archive-thumb img {
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+.user-post-archive-content {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user-post-archive-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+.user-post-archive-content a {
+  color: #222;
+  text-decoration: none;
+}
+.user-post-archive-content a:hover {
+  color: #007bff;
+}
+.user-post-excerpt {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0;
+}
+
+/* Responsive: xếp dọc khi mobile */
+@media (max-width: 700px) {
+  .user-post-archive-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 8px;
+    gap: 18px;
+  }
+  .user-post-archive-thumb {
+    max-width: 100%;
+    width: 100%;
+  }
+  .user-post-archive-content h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .user-post-excerpt {
+    text-align: center;
+  }
+}
